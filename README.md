@@ -132,7 +132,7 @@ This project is educational. Key concepts:
 
 ## License
 
-Currently unlicensed. Feel free to use for learning purposes.
+GNU GPL v3.0
 
 ---
 

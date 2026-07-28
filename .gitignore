@@ -1,6 +1,6 @@
 # Object files
 *.o
 
-# Disk images and binaries
+# disk images and binaries
 *.bin
 *.iso

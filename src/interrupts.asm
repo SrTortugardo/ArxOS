@@ -11,14 +11,14 @@ idt_load:
     lidt [eax]
     ret
 
-; IRQ0 - Timer Stub
+; IRQ0 timer stub
 irq0_stub:
     pusha
     call timer_handler
     popa
     iretd
 
-; IRQ1 - Keyboard Stub
+; IRQ1 keyboard stub
 irq1_stub:
     pusha
     call keyboard_handler

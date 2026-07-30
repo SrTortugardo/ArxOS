@@ -47,25 +47,51 @@ void shell_run(void)
     char buffer[128];
     int buf_idx = 0;
 
-    print("Shell started! Type 'help' for commands.\n\n");
-    print("Started login process\n");
-    print("Enter wompy ahh password:\n");
-
+    print("Shell started!\n");
     while (1)
     {
-        char c = getchar();
-        if (c != 'r')
+        print("Enter password: ");
+        buf_idx = 0;
+        while (1)
         {
-            print("nu uhh\n");
+            char c = getchar();
+
+            if (c == '\n')
+            {
+                putchar('\n');
+                buffer[buf_idx] = '\0'; 
+                break;
+            }
+            else if (c == '\b')
+            {
+                if (buf_idx > 0)
+                {
+                    buf_idx--;
+                    backspace();
+                }
+            }
+            else if (buf_idx < (int)sizeof(buffer) - 1)
+            {
+                buffer[buf_idx++] = c;
+                putchar('*');
+            }
+        }
+
+        
+        if (strcmp(buffer, "ark") == 0)
+        {
+            print("success\n\n");
+            break;
         }
         else
         {
-            print("you pressed the right key!\n");
-            break;
+            print("invalid\n");
         }
     }
 
-    print("kernel> ");
+    
+    print("Arc:kernel> ");
+    buf_idx = 0;
 
     while (1)
     {
@@ -77,7 +103,7 @@ void shell_run(void)
             buffer[buf_idx] = '\0';
             execute_command(buffer);
             buf_idx = 0;
-            print("kernel> ");
+            print("Arc:kernel> ");
         }
         else if (c == '\b')
         {

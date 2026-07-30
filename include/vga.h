@@ -6,4 +6,4 @@ void putchar(char c);
 void print(const char *str);
 void backspace(void);
 
-#endif // VGA_H
+#endif 

@@ -5,7 +5,7 @@ CC = gcc
 LD = ld
 GRUBISO = grub-mkrescue
 GRUBISOO = ArxOS.iso
-QEMU = qemu-system-x86_64
+QEMU = qemu-system-i386
 QEMU8664 = qemu-system-x86_64
 
 ASFLAGS = --32
